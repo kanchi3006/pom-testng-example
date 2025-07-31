@@ -1,0 +1,23 @@
+{
+  "loginTests": [
+    {
+      "testCase": "Valid credentials",
+      "username": "student",
+      "password": "Password123",
+      "testCaseType": "VALID"
+
+    },
+    {
+      "testCase": "Invalid password",
+      "username": "validUser",
+      "password": "wrongPass",
+      "testCaseType": "INVALID"
+    },
+    {
+      "testCase": "Empty fields",
+      "username": "",
+      "password": "",
+      "testCaseType": "INVALID"
+    }
+  ]
+}
