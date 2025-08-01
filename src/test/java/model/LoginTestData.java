@@ -1,10 +1,8 @@
 package model;
 
-public class LoginTestData {
+public class LoginTestData extends TestData {
     private String username;
     private String password;
-    private String testCase;
-    private String testCaseType;
 
     public String getUsername() {
         return username;
@@ -18,16 +16,5 @@ public class LoginTestData {
     public void setPassword(String password) {
         this.password = password;
     }
-    public String getTestCase() {
-        return testCase;
-    }
-    public void setTestCase(String testCase) {
-        this.testCase = testCase;
-    }
-    public String getTestCaseType() {
-        return testCaseType;
-    }
-    public void setTestCaseType(String testCaseType) {
-        this.testCaseType = testCaseType;
-    }
+
 }

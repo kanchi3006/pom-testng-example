@@ -48,4 +48,10 @@ public class ConfigFile {
         if (waitDuration != null) return Long.parseLong(waitDuration);
         else throw new RuntimeException("unable to find wait duration in properties file");
     }
+
+    public String getReportPath() {
+        String report_path = properties.getProperty("report-path");
+        if (report_path != null) return report_path;
+        else throw new RuntimeException("unable to find report path in properties file");
+    }
 }

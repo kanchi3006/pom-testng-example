@@ -11,7 +11,7 @@
       "testCase": "Invalid password",
       "username": "validUser",
       "password": "wrongPass",
-      "testCaseType": "INVALID"
+      "testCaseType": "VALID"
     },
     {
       "testCase": "Empty fields",

@@ -43,4 +43,8 @@ public class BrowserSetup {
     public static void navigateToSite() {
         driver.get(configFile.getTestUrl());
     }
+
+    public static void closeBrowser() {
+        getLocalDriver().quit();
+    }
 }
