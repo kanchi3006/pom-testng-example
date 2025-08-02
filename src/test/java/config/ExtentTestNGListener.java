@@ -32,8 +32,14 @@ public class ExtentTestNGListener implements ITestListener {
     public void onTestStart(ITestResult result) {
         String methodName = result.getMethod().getMethodName();
         Object[] parameters = result.getParameters();
-        TestData params = (TestData) parameters[0];
-        test = extent.createTest(methodName + " " + params.getTestCase());
+        if(parameters.length==0)
+        {
+            test = extent.createTest(methodName);
+        }
+        else {
+            TestData params = (TestData) parameters[0];
+            test = extent.createTest(methodName + " " + params.getTestCase());
+        }
     }
 
     @Override
@@ -44,13 +50,18 @@ public class ExtentTestNGListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
         WebDriver driver = BrowserSetup.getLocalDriver();
-        String methodName = result.getMethod().getMethodName();
-        Object[] parameters = result.getParameters();
-        TestData params = (TestData) parameters[0];
-        String screenshotPath = Helper.takeScreenshot(driver, methodName+"_"+params.getTestCase());
-        test.fail(result.getThrowable());
-        test.addScreenCaptureFromPath(screenshotPath);
-        test.fail("Test Failed: " + result.getThrowable());
+        if( result.getMethod().getMethodName().contains("API")){
+            test.fail("Test Failed: " + result.getThrowable());
+        }
+        else
+        {
+            String methodName = result.getMethod().getMethodName();
+            Object[] parameters = result.getParameters();
+            TestData params = (TestData) parameters[0];
+            String screenshotPath = Helper.takeScreenshot(driver, methodName+"_"+params.getTestCase());
+            test.fail(result.getThrowable());
+            test.addScreenCaptureFromPath(screenshotPath);
+        }
     }
 
     @Override

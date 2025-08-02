@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="RegressionTest">
-    <test thread-count="1" name="TestOne">
+    <test thread-count="1" name="API">
         <classes>
-            <class name="testCase.LoginTest"/>
+            <class name="UITestCase.LoginTest"/>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

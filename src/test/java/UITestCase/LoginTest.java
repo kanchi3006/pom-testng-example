@@ -1,4 +1,4 @@
-package testCase;
+package UITestCase;
 
 import config.ExtentTestNGListener;
 import model.LoginTestData;
@@ -37,7 +37,7 @@ public class LoginTest {
     }
 
     @AfterSuite()
-    public void destory() {
+    public void quitBrowser() {
         closeBrowser();
     }
 }
